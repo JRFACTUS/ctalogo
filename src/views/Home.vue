@@ -1,34 +1,32 @@
 <template>
   <div class="home">
     <!-- Componente Superior: Cabecera, Buscador, Banner y Filtro de Marcas -->
-   <!-- CÓDIGO CORREGIDO EN HOME.VUE -->
-<HeaderBanner 
-  :productos="productos"
-  @buscar="manejarBusqueda" 
-  @filtrarMarca="manejarFiltroMarca" 
-/>
+    <!-- CÓDIGO CORREGIDO EN HOME.VUE -->
+    <HeaderBanner :productos="productos" @buscar="manejarBusqueda" @filtrarMarca="manejarFiltroMarca" />
 
     <main class="contenido">
 
       <!-- BANNER DE ACTUALIZACIÓN DE CATÁLOGO -->
-<div class="banner-actualizacion">
-  <div class="icono-recuadro">
-    <!-- Icono de recargar / actualizar en SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-      <path d="M3 3v5h5"/>
-      <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
-      <path d="M16 16h5v5"/>
-    </svg>
-  </div>
-  
-  <div class="texto-recuadro">
-    <h4 class="titulo-banner">Estamos actualizando nuestro catálogo</h4>
-    <p class="descripcion-banner">
-      Poco a poco estaremos agregando nuevos productos. Si buscas algún producto en particular, consúltanos por WhatsApp.
-    </p>
-  </div>
-</div>
+      <div class="banner-actualizacion">
+        <div class="icono-recuadro">
+          <!-- Icono de recargar / actualizar en SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+            <path d="M3 3v5h5" />
+            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+            <path d="M16 16h5v5" />
+          </svg>
+        </div>
+
+        <div class="texto-recuadro">
+          <h4 class="titulo-banner">Estamos actualizando nuestro catálogo</h4>
+          <p class="descripcion-banner">
+            Poco a poco estaremos agregando nuevos productos. Si buscas algún producto en particular, consúltanos por
+            WhatsApp.
+          </p>
+        </div>
+      </div>
       <!-- GRID DE PRODUCTOS -->
       <div class="grid-productos">
         <article v-for="p in productosVisibles" :key="p.id" class="tarjeta" :class="[
@@ -475,9 +473,12 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 14px;
-  background-color: #fffdf0; /* Fondo crema claro */
-  border: 1px solid #fde68a;  /* Borde dorado muy suave */
-  border-radius: 14px;       /* Esquinas redondeadas */
+  background-color: #fffdf0;
+  /* Fondo crema claro */
+  border: 1px solid #fde68a;
+  /* Borde dorado muy suave */
+  border-radius: 14px;
+  /* Esquinas redondeadas */
   padding: 14px 18px;
   margin-bottom: 24px;
 }
@@ -486,12 +487,14 @@ onUnmounted(() => {
 .icono-recuadro {
   width: 40px;
   height: 40px;
-  background-color: #fef3c7; /* Fondo del cuadrito */
+  background-color: #fef3c7;
+  /* Fondo del cuadrito */
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #d97706;           /* Color naranja/dorado del icono */
+  color: #d97706;
+  /* Color naranja/dorado del icono */
   flex-shrink: 0;
 }
 
@@ -506,13 +509,15 @@ onUnmounted(() => {
   margin: 0;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #78350f;            /* Color marrón/naranja oscuro */
+  color: #78350f;
+  /* Color marrón/naranja oscuro */
 }
 
 .descripcion-banner {
   margin: 0;
   font-size: 0.88rem;
-  color: #b45309;            /* Texto descriptivo cálido */
+  color: #b45309;
+  /* Texto descriptivo cálido */
   line-height: 1.4;
 }
 
@@ -522,7 +527,7 @@ onUnmounted(() => {
     align-items: flex-start;
     padding: 12px 14px;
   }
-  
+
   .icono-recuadro {
     width: 36px;
     height: 36px;
